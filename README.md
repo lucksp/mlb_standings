@@ -6,26 +6,23 @@ React boilerplate with Webpack, Express, Hot Module Replacement loading
 
 Create a bare clone of the repository.
 
-`git clone --bare git@github.com:lucksp/react_webpack_express_boilerplate.git`
-// Mirror-push to the new repository.
+`git clone --bare git@github.com:lucksp/react_webpack_express_boilerplate.git`  // Mirror-push to the new repository.
 
-`cd react_webpack_express_boilerplate.git`
-`git push --mirror https://github.com/exampleuser/your-new-repository.git`
-// Remove the temporary local repository you created in step 1.
+`cd react_webpack_express_boilerplate.git` and `git push --mirror https://github.com/exampleuser/your-new-repository.git` // Remove the temporary local repository you created in step 1.
 
-`cd ..`
-`rm -rf old-repository.git`
+`cd ..` and `rm -rf react_webpack_express_boilerplate.git`
+
 Then...
 
-`yarn install`
+`npm install`
 
 ## Run Dev
 
-`yarn dev`
+`npm run dev`
 
 ## Run Prod
 
-`yarn build`
+`npm run build`
 
 #### Credits to:
 
