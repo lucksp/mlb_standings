@@ -3,16 +3,16 @@ import Card from "../components/card";
 import ReactTable from "react-table";
 
 import "react-table/react-table.css";
+import StyledHome from "./Home.css";
 
 const Home = ({ data }) => {
   return data.map((league, i) => {
     const title =
       Object.keys(league)[0] === "AL" ? "American League" : "National League";
     return (
-      <Card key={i}>
-        <div>{title}</div>
-        {perLeague(league)}
-      </Card>
+      <StyledHome key={i}>
+        <Card title={title}>{perLeague(league)}</Card>
+      </StyledHome>
     );
   });
 };
@@ -26,7 +26,7 @@ const perLeague = league => {
     return (
       <ReactTable
         key={i}
-        style={{ width: "100%", textAlign: "center" }}
+        style={{ width: "100%", textAlign: "center", fontSize: "16px" }}
         resizable={false}
         pageSize={5}
         data={league[id][division]}
@@ -46,17 +46,20 @@ const perLeague = league => {
               {
                 Header: "Team",
                 id: "col-team",
-                accessor: d => d.team
+                accessor: d => d.team,
+                className: "data-cell"
               },
               {
                 Header: "Wins",
                 id: "col-wins",
-                accessor: d => d.wins
+                accessor: d => d.wins,
+                className: "data-cell"
               },
               {
                 Header: "Losses",
                 id: "col-losses",
-                accessor: d => d.losses
+                accessor: d => d.losses,
+                className: "data-cell"
               }
             ]
           }

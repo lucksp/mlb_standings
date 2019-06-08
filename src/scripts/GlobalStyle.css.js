@@ -1,9 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-@import url(‘https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+
 body{
     font-family: "Roboto", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
     height: 100vh;
     max-height: 100vh;
     max-width: 100vw;

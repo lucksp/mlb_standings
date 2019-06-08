@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default styled.div`
+const StyledCard = styled.div`
   border-radius: 4px;
   border: 1px solid #041e42;
   background-color: #fafafa;
@@ -11,4 +11,9 @@ export default styled.div`
   align-items: center;
   justify-content: center;
   flex-flow: column nowrap;
+  .title {
+    padding: 8px 0;
+  }
 `;
+
+export default StyledCard;
