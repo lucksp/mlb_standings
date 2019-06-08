@@ -51,14 +51,7 @@ module.exports = {
           { loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader },
           { loader: "css-loader" },
           {
-            loader: "postcss-loader",
-            options: {
-              plugins: () => [
-                autoprefixer({
-                  browsers: "last 2 versions"
-                })
-              ]
-            }
+            loader: "postcss-loader"
           },
           { loader: "sass-loader" }
         ]
