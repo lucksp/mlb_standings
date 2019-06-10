@@ -32,7 +32,11 @@ const App = () => {
 
     fetchData();
   }, []);
-  return <Home data={data} />;
+  return (
+    <React.Fragment>
+      <Home data={data} />
+    </React.Fragment>
+  );
 };
 
 export default App;

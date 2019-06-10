@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import Card from "../components/card";
 import ReactTable from "react-table";
 
 import "react-table/react-table.css";
+import Header from "./Header";
+
+// styled
 import StyledHome from "./Home.css";
+import { titleToId } from "../util";
 
 const Home = ({ data }) => {
-  return data.map((league, i) => {
-    const title =
-      Object.keys(league)[0] === "AL" ? "American League" : "National League";
-    return (
-      <StyledHome key={i}>
-        <Card title={title}>{perLeague(league)}</Card>
-      </StyledHome>
-    );
-  });
+  let refs = [React.createRef(), React.createRef()];
+
+  return (
+    <StyledHome>
+      <Header refs={refs} />
+      {data.map((league, i) => {
+        const title =
+          Object.keys(league)[0] === "AL"
+            ? "American League"
+            : "National League";
+        return (
+          <Card key={i} title={title} id={titleToId(title)} ref={refs[i]}>
+            {perLeague(league)}
+          </Card>
+        );
+      })}
+    </StyledHome>
+  );
 };
 
 export default Home;
@@ -32,7 +45,7 @@ const perLeague = league => {
         data={league[id][division]}
         showPagination={false}
         className="-striped -highlight"
-        sorted={[
+        defaultSorted={[
           {
             id: "col-wins",
             desc: true
