@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const request = require("request");
 
 const app = express();
 const port = process.env.NODE_ENV === "production" ? 80 : 3000;
@@ -36,7 +37,12 @@ app.get("/", function(req, res) {
 });
 
 app.get("/api/data", (req, res) => {
-  res.send("hi from server"); // replace me with real data
+  request(
+    "https://api.mobileqa.mlbinfra.com/api/interview/v1/records",
+    function(error, response, body) {
+      return res.send(response.toJSON());
+    }
+  );
 });
 
 app.listen(port, function(err) {

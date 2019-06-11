@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
 
 import Home from "./Home";
-import { dataSet } from "./DATA";
+import { fetchWrapper } from "../api";
 
 const App = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      // const mlbData = await fetch(
-      //   "https://api.mobileqa.mlbinfra.com/api/interview/v1/records"
-      // ).then(response => {
-      //   try {
-      //     return response.json();
-      //   } catch (e) {
-      //     console.warn(e);
-      //     return [];
-      //   }
-      // });
-      const mlbData = dataSet;
+      const mlbData = await fetchWrapper("api/data").then(response => {
+        try {
+          return JSON.parse(response.body);
+        } catch (e) {
+          console.warn(e);
+          return [];
+        }
+      });
       let sorted;
       if (mlbData.length) {
         sorted = groupBy(mlbData, "league");
