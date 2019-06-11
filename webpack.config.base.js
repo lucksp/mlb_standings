@@ -34,7 +34,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.(png|jpg|gif|svg)$/i,
+        test: /\.(png|jpg|gif)$/i,
         use: [
           {
             loader: "url-loader",
@@ -44,6 +44,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        loader: "file-loader"
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -61,7 +65,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "public/index.html",
-      favicon: "public/assets/img/favicon.ico"
+      favicon: "public/assets/img/favicon.png"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
