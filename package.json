@@ -19,7 +19,7 @@
   "scripts": {
     "start": "npm run build && NODE_ENV=production node server/server.js",
     "dev": "NODE_ENV=dev node server/server.js",
-    "build": "cross-env webpack --config webpack.config.production.js"
+    "build": "webpack --config webpack.config.production.js"
   },
   "engines": {
     "node": "8.12.0",
