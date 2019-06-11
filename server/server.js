@@ -3,7 +3,7 @@ const express = require("express");
 const request = require("request");
 
 const app = express();
-app.set("port", process.env.PORT || 3000);
+const port = process.env.PORT || 3000;
 
 let useFolder;
 console.log("NODE_ENV: ", process.env.NODE_ENV);
