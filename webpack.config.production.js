@@ -42,11 +42,11 @@ module.exports = merge(baseConfig, {
       }
     }),
     new CleanWebpackPlugin(),
-    // new HtmlWebpackPlugin({
-    //   title: "Production",
-    //   template: "public/index.html",
-    //   favicon: "public/assets/img/favicon.ico"
-    // }),
+    new HtmlWebpackPlugin({
+      title: "Production",
+      template: "public/index.html",
+      favicon: "public/assets/img/favicon.png"
+    }),
     new MiniCssExtractPlugin(),
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: {
