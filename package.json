@@ -17,9 +17,11 @@
     "node"
   ],
   "scripts": {
-    "start": "npm run build && NODE_ENV=production node server/server.js",
+    "heroku-postbuild": "npm run build",
+    "start": "npm run serve:prod",
     "dev": "NODE_ENV=dev node server/server.js",
-    "build": "webpack --config webpack.config.production.js"
+    "build": "webpack --config webpack.config.production.js",
+    "serve:prod": "NODE_ENV=production node server/server.js"
   },
   "engines": {
     "node": "8.12.0",
