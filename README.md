@@ -12,8 +12,4 @@ Display 2018 MLB Standings via React app with Webpack, Express, Hot Module Repla
 
 `npm run dev`
 
-### Build for Prod:
-
-`npm run build`
-
 Note: If using YARN for package management, please reference their documentation for equivalent `npm` commands above.
