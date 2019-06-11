@@ -4,7 +4,7 @@ Display 2018 MLB Standings via React app with Webpack, Express, Hot Module Repla
 
 ## Setup
 
-### Install dependencies:
+### Install NPM dependencies:
 
 `npm install`
 
@@ -15,3 +15,5 @@ Display 2018 MLB Standings via React app with Webpack, Express, Hot Module Repla
 ### Build for Prod:
 
 `npm run build`
+
+Note: If using YARN for package management, please reference their documentation for equivalent `npm` commands above.
