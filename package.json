@@ -21,6 +21,10 @@
     "dev": "NODE_ENV=dev node server/server.js",
     "build": "cross-env webpack --config webpack.config.production.js && NODE_ENV=production node server/server.js"
   },
+  "engines": {
+    "node": "8.12.0",
+    "npm": "6.4.1"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
