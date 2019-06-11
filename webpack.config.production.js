@@ -23,7 +23,7 @@ module.exports = merge(baseConfig, {
         use: ["babel-loader"]
       },
       {
-        test: /\.(jpg|png|gif|svg|pdf)$/,
+        test: /\.(jpg|png|gif|pdf)$/,
         use: [
           {
             loader: "file-loader",
@@ -42,11 +42,11 @@ module.exports = merge(baseConfig, {
       }
     }),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: "Production",
-      template: "public/index.html",
-      favicon: "public/assets/img/favicon.ico"
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: "Production",
+    //   template: "public/index.html",
+    //   favicon: "public/assets/img/favicon.ico"
+    // }),
     new MiniCssExtractPlugin(),
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: {

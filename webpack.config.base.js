@@ -46,6 +46,10 @@ module.exports = {
         ]
       },
       {
+        test: /\.svg$/,
+        loader: "file-loader"
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         loaders: [
           { loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader },
@@ -61,7 +65,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "public/index.html",
-      favicon: "public/assets/img/favicon.ico"
+      favicon: "public/assets/img/favicon.png"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css"
