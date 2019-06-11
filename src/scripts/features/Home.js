@@ -1,13 +1,15 @@
-import React, { useRef } from "react";
+import React from "react";
+import PropTypes from "prop-types";
+
 import Card from "../components/card";
 import ReactTable from "react-table";
-
 import "react-table/react-table.css";
 import Header from "./Header";
 
 // styled
 import StyledHome from "./Home.css";
 import { titleToId } from "../util";
+import { leagueType } from "../util/types";
 
 const Home = ({ data }) => {
   let refs = [React.createRef(), React.createRef()];
@@ -28,6 +30,15 @@ const Home = ({ data }) => {
       })}
     </StyledHome>
   );
+};
+
+Home.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      AL: leagueType,
+      NL: leagueType
+    }).isRequired
+  )
 };
 
 export default Home;

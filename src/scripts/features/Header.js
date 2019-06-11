@@ -1,9 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import logo from "../../../public/assets/img/logo.svg";
 
 //styled
 import StyledHead from "./Header.css";
 import { LEAGUE_ID } from "../util";
+import { refType } from "../util/types";
 
 const Header = props => {
   const scrollTo = (e, id) => {
@@ -33,6 +36,10 @@ const Header = props => {
       </div>
     </StyledHead>
   );
+};
+
+Header.propTypes = {
+  refs: PropTypes.arrayOf(PropTypes.shape({ refType, refType }))
 };
 
 export default Header;
